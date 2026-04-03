@@ -1,15 +1,19 @@
 pipeline {
     agent any
 
-    stage ('Clean Workspace') {
-        stage {
-            cleanWs()
+    stages{
+        stage ('Clean Workspace') {
+            stage {
+                cleanWs()
+            }
+        }
+
+        stage ('Checkout SCM'){
+            steps {
+                git branch: 'main', url: 'https://github.com/CStalenes/depotgithub.git'
+            }
         }
     }
 
-    stage ('Checkout SCM'){
-        steps {
-            git branch: 'main', url: 'https://github.com/CStalenes/depotgithub.git'
-        }
-    }
+   
 }
