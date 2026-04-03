@@ -18,7 +18,7 @@ pipeline {
             steps{
                 sh 'sudo apt-get update'
                 sh 'sudo apt-get install docker.io -y'
-                sh 'sudo apt install apt-transport-https ca-certificate curl  software-properties-common -y'
+                sh 'sudo apt install apt-transport-https ca-certificates curl  software-properties-common -y'
                 sh 'sudo chmod 666 /var/run/docker.sock'
                 sh 'sudo usermod -aG docker $USER'
                 sh 'sudo systemctl start docker'
